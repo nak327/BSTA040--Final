@@ -20,7 +20,8 @@ statedf = ilidf[ilidf['state'].isin(selected_states)]
 
 #plot graph for weeks vs percent ili
 st.subheader(f"Line chart for: {', '.join(selected_states)} vs Percent ILI")
-st.line_chart(statedf[['weeks', 'ili']].set_index('weeks'))
+line_chart = st.line_chart(statedf[['weeks', 'ili']].set_index('weeks'))
+
 
 #Description 
 st.write (""" The line chart displays the trend of Influenza-like Illness (ILI) percentages over time for the selected states. The x-axis represents the weeks starting from 0 up to the total number of weeks in the dataset, while the y-axis shows the percentage of ILI reported in those weeks. Each point on the line corresponds to a particular week’s ILI data for the chosen states. As users select different states, this chart dynamically updates to show the time series for the selected regions. The chart provides an insightful view into how the ILI percentage fluctuates over time, which could be influenced by seasonal trends, public health interventions, or other factors. The trend observed in the chart can offer useful information on the temporal behavior of ILI for public health monitoring. """)
